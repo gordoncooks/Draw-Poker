@@ -25,8 +25,8 @@ def main():
                 # Give cards to players
                 while(True):
                     # Check last player total hands
-                    player_hand = players[4]
-                    hand_len = len(player_hand)
+                    player_hand_checker = players[4]
+                    hand_len = len(player_hand_checker)
                     if hand_len == 5:
                         break
                     else:
@@ -34,6 +34,19 @@ def main():
                         for player in players:
                             player.append(deck[cardDeckIndex])
                             cardDeckIndex += 1
+
+                # Assing hand to player and opponents
+                playerHand = players[0]
+                oponent1 = players[1]
+                oponent2 = players[2]
+                oponent3 = players[3]
+                oponent4 = players[4]
+
+                # Show player their hand hands
+                ui.displayHand(playerHand)
+                
+                userInput = ui.userInputPromt()
+                
 
             # Quit game if 2 was selected
             case "2":
